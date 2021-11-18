@@ -33,8 +33,8 @@ public class App {
 
         int totalNum = numberOfMale + numberOfFemale;
 
-        int numberOfPreference = getPreference(numberOfMale, numberOfFemale, preferenceGender);
-        int totalPreferencePayment = preferencePayment * numberOfPreference;
+        int numberOfBear = getNumberOfBear(numberOfMale, numberOfFemale, preferenceGender);
+        int totalPreferencePayment = preferencePayment * numberOfBear;
 
         int everyoneTotalPrice = totalPrice - totalPreferencePayment;
         int everyonePayment = everyoneTotalPrice / totalNum;
@@ -46,15 +46,15 @@ public class App {
         dispPayment(malePayment, femalePayment, remnantPrice);
     }
 
-    private static int getPreference(int numberOfMale, int numberOfFemale, Preference preferenceGender) {
+    private static int getNumberOfBear(int numberOfMale, int numberOfFemale, Preference preferenceGender) {
 
         switch (preferenceGender) {
 
         case MALE:
-            return numberOfMale;
+            return numberOfFemale;
 
         case FEMALE:
-            return numberOfFemale;
+            return numberOfMale;
 
         default:
             return 0;
